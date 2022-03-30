@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Elmer125/Todo-List/static/css/main.b42065a2.css",
+    "main.js": "/Elmer125/Todo-List/static/js/main.5657e7fc.js",
+    "index.html": "/Elmer125/Todo-List/index.html",
+    "main.b42065a2.css.map": "/Elmer125/Todo-List/static/css/main.b42065a2.css.map",
+    "main.5657e7fc.js.map": "/Elmer125/Todo-List/static/js/main.5657e7fc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b42065a2.css",
+    "static/js/main.5657e7fc.js"
+  ]
+}
