@@ -3,7 +3,7 @@ import "../Styles/TodoSearch.css";
 import { TodoContext } from "../Context/TodoCountext";
 
 export const TodoSearch = () => {
-  const { search, setSearch } = useContext(TodoContext);
+  const { search, setSearch, totalTodos } = useContext(TodoContext);
   const onSearchValueChange = (event) => {
     setSearch(event.target.value);
   };
@@ -14,6 +14,7 @@ export const TodoSearch = () => {
         placeholder="..."
         value={search}
         onChange={onSearchValueChange}
+        disabled={!totalTodos}
       />
     </>
   );

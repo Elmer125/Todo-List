@@ -10,6 +10,7 @@ const TodoProvider = (props) => {
     saveItem: saveTodos,
     loading,
     error,
+    sincronize,
   } = useLocalStorage("TODOS_V1", []);
 
   //Estados
@@ -81,6 +82,7 @@ const TodoProvider = (props) => {
         deleteTodos,
         openModal,
         setOpenModal,
+        sincronize,
       }}
     >
       {props.children}

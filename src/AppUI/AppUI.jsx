@@ -10,6 +10,8 @@ import { TodoForm } from "../Components/TodoForm";
 import { Loader } from "../Components/Loader";
 import { EmptyTodo } from "../Components/EmptyTodo";
 import { TodoError } from "../Components/TodoError";
+import { ChangeAlert } from "../Components/ChangeAlert/ChangeAlert";
+import { EmptySearch } from "../Components/EmptySearch";
 
 export const AppUI = () => {
   const {
@@ -20,6 +22,7 @@ export const AppUI = () => {
     deleteTodos,
     openModal,
     setOpenModal,
+    totalTodos,
   } = useContext(TodoContext);
 
   return (
@@ -29,7 +32,8 @@ export const AppUI = () => {
       <TodoList>
         {error && <TodoError />}
         {loading && <Loader />}
-        {!loading && !searchedTodos.length && <EmptyTodo />}
+        {!loading && !totalTodos && <EmptyTodo />}
+        {!!totalTodos && !searchedTodos.length && <EmptySearch />}
         {searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
@@ -45,7 +49,8 @@ export const AppUI = () => {
           <TodoForm />
         </Modal>
       )}
-      <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
+      <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />.
+      <ChangeAlert />
     </>
   );
 };

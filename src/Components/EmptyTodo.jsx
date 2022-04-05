@@ -10,10 +10,11 @@ export const EmptyTodo = () => {
         justifyContent: "center",
         alignItems: "center",
         margin: "40px",
+        
       }}
     >
-      <p>
-        ¡Crea una tarea! 
+      <p style={{fontSize:"40px"}}>
+        ¡Crea una nueva tarea! 
       </p>
       <BsJournalPlus className="Icon-create" />
     </div>

@@ -6,7 +6,7 @@ export const TodoCounter = () => {
   const { numerocompletedTodos, totalTodos } = useContext(TodoContext);
   return (
     <>
-      <h2 className="TodoCounter">
+      <h2 className={!totalTodos ? "TodoCounter-opacity" : "TodoCounter"}>
         Has complentado {numerocompletedTodos} de {totalTodos} Tareas
       </h2>
     </>
