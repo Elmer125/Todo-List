@@ -1,5 +1,5 @@
 import React from "react";
-import { BsJournalPlus } from "react-icons/bs";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import "../Styles/EmptyTodo.css";
 
 export const EmptyTodo = () => {
@@ -10,13 +10,12 @@ export const EmptyTodo = () => {
         justifyContent: "center",
         alignItems: "center",
         margin: "40px",
-        
       }}
     >
-      <p style={{fontSize:"40px"}}>
-        ¡Crea una nueva tarea! 
+      <p style={{ fontSize: "40px" }}>
+        Da click en el boton <AiOutlinePlusCircle className="Icon-create " />{" "}
+        para agregar una nueva tarea
       </p>
-      <BsJournalPlus className="Icon-create" />
     </div>
   );
 };

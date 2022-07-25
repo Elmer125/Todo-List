@@ -12,7 +12,8 @@ import { EmptyTodo } from "../Components/EmptyTodo";
 import { TodoError } from "../Components/TodoError";
 import { ChangeAlert } from "../Components/ChangeAlert/ChangeAlert";
 import { EmptySearch } from "../Components/EmptySearch";
-
+import { ToastContainer } from "react-toastify";
+import { toastInfo, toastSuccess } from "../Utilities/Alerts";
 export const AppUI = () => {
   const {
     loading,
@@ -39,8 +40,14 @@ export const AppUI = () => {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
-            onComplete={() => completeTodos(todo.text)}
-            onDelete={() => deleteTodos(todo.text)}
+            onComplete={() => {
+              completeTodos(todo.text);
+              toastSuccess("Tarea completada ");
+            }}
+            onDelete={() => {
+              deleteTodos(todo.text);
+              toastInfo("Tarea eliminada");
+            }}
           />
         ))}
       </TodoList>
@@ -49,6 +56,7 @@ export const AppUI = () => {
           <TodoForm />
         </Modal>
       )}
+      <ToastContainer />
       <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />.
       <ChangeAlert />
     </>

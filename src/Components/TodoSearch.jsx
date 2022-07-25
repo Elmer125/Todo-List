@@ -11,7 +11,11 @@ export const TodoSearch = () => {
     <>
       <input
         className="TodoSearch"
-        placeholder="..."
+        placeholder={
+          totalTodos
+            ? "Busque su tarea 🔍"
+            : "Crea una nueva tarea para iniciar la busqueda"
+        }
         value={search}
         onChange={onSearchValueChange}
         disabled={!totalTodos}

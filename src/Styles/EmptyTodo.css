@@ -1,13 +1,14 @@
 .Icon-create {
-  cursor: pointer;
+  font-size: 40px;
+  font-weight: bold;
+  color: #30b4d8;
+  /* cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 48px;
-  width: 48px;
-  font-size: 24px;
-  font-weight: bold;
-  color: green;
+
+ /*
   margin-left: 10px;
+  pointer-events: none; */
   /* background-color: #CCC; */
 }

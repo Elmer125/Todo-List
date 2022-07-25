@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { TodoContext } from "../Context/TodoCountext";
+import { toastError, toastSuccess } from "../Utilities/Alerts";
 import "../Styles/TodoForm.css";
 
 export const TodoForm = () => {
@@ -11,9 +12,15 @@ export const TodoForm = () => {
     setOpenModal(false);
   };
   const onAdd = (e) => {
-    e.preventDefault();
-    AddTodo(newTodoValue);
-    setOpenModal(false);
+    if (!newTodoValue) {
+      e.preventDefault();
+      toastError("Escriba una tarea");
+    } else {
+      e.preventDefault();
+      AddTodo(newTodoValue);
+      setOpenModal(false);
+      toastSuccess("Tarea agregada con exito");
+    }
   };
   const onChange = (e) => {
     setNewTodoValue(e.target.value);
@@ -33,6 +40,7 @@ export const TodoForm = () => {
         >
           Cancelar
         </button>
+
         <button className="TodoForm-button TodoForm-button-add" type="submit">
           Añadir
         </button>
